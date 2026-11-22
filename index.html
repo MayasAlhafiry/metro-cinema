@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metro Cinema – Movie Reviews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23150f1a' stroke='%23d9b86c' stroke-width='3'/%3E%3Cpolygon points='21,15 43,15 40,25 24,25' fill='%238f2a3a'/%3E%3Ccircle cx='25' cy='12' r='4' fill='%23f6ecd2'/%3E%3Ccircle cx='32' cy='10' r='5' fill='%23f6ecd2'/%3E%3Ccircle cx='39' cy='12' r='4' fill='%23f6ecd2'/%3E%3Crect x='14' y='25' width='36' height='24' rx='7' fill='%23d9b86c'/%3E%3Crect x='18' y='29' width='28' height='12' rx='5' fill='%23150f1a'/%3E%3Ccircle cx='26' cy='35' r='4' fill='%23fff'/%3E%3Ccircle cx='38' cy='35' r='4' fill='%23fff'/%3E%3Ccircle cx='27' cy='36' r='2' fill='%23150f1a'/%3E%3Ccircle cx='39' cy='36' r='2' fill='%23150f1a'/%3E%3Cpath d='M25 44Q32 49 39 44' stroke='%23150f1a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='52' r='3.5' fill='%23f2dca0'/%3E%3Ccircle cx='41' cy='52' r='3.5' fill='%23f2dca0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="logo" href="index.html" aria-label="Metro Cinema home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+    <polygon points="21,15 43,15 40,25 24,25" fill="#8f2a3a"/>
+    <circle cx="25" cy="12" r="4" fill="#f6ecd2"/>
+    <circle cx="32" cy="10" r="5" fill="#f6ecd2"/>
+    <circle cx="39" cy="12" r="4" fill="#f6ecd2"/>
+    <rect x="14" y="25" width="36" height="24" rx="7" fill="#d9b86c"/>
+    <rect x="18" y="29" width="28" height="12" rx="5" fill="#150f1a"/>
+    <circle cx="26" cy="35" r="4" fill="#fff"/>
+    <circle cx="38" cy="35" r="4" fill="#fff"/>
+    <circle class="pupil" cx="27" cy="36" r="2" fill="#150f1a"/>
+    <circle class="pupil" cx="39" cy="36" r="2" fill="#150f1a"/>
+    <path d="M25 44Q32 49 39 44" stroke="#150f1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="23" cy="52" r="3.5" fill="#f2dca0"/>
+    <circle cx="41" cy="52" r="3.5" fill="#f2dca0"/>
+    </svg>
+  </a>
+
+<div class="navs">
+
+    <nav aria-label="Guest navigation">
+      <span class="role">Guest</span>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="user-signup.html">Sign up</a>
+      <a href="login.html">Login</a>
+    </nav>
+
+    <nav aria-label="User navigation">
+      <span class="role">User</span>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="search.html">Search</a>
+      <a href="my-reviews.html">My Reviews</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+
+    <nav aria-label="Admin navigation">
+      <span class="role">Admin</span>
+      <a href="index.html">Home</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="manage-movies.html">Manage Movies</a>
+      <a href="add-movie.html">Add Movie</a>
+      <a href="review-requests.html">Review Requests</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+
+  </div>
+
+  <header>
+    <h1>Metro Cinema</h1>
+    <p>User reviews of Marvel films and the great classics of Egyptian cinema.</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2 class="section-title">Marvel Films</h2>
+      <div class="movie-grid">
+
+<a href="movie-details.html#iron-man" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster iron-man"><b>Iron Man</b></div>
+          <div class="info">
+            <h3>Iron Man <small>2008</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“The film that started it all. Downey is perfect.”</p>
+            <span class="user">Layla</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#black-panther" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster black-panther"><b>Black Panther</b></div>
+          <div class="info">
+            <h3>Black Panther <small>2018</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Stunning world, great music and a strong villain.”</p>
+            <span class="user">Youssef</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#endgame" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster endgame"><b>Avengers: Endgame</b></div>
+          <div class="info">
+            <h3>Avengers: Endgame <small>2019</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“An emotional finale worth ten years of waiting.”</p>
+            <span class="user">Omar</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#guardians" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster guardians"><b>Guardians of the Galaxy</b></div>
+          <div class="info">
+            <h3>Guardians of the Galaxy <small>2014</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Funny, colorful and full of heart.”</p>
+            <span class="user">Nour</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#spiderman" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster spiderman"><b>Spider-Man: No Way Home</b></div>
+          <div class="info">
+            <h3>Spider-Man: No Way Home <small>2021</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“The cinema was shouting. Pure fan joy.”</p>
+            <span class="user">Hady</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#doctor-strange" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster doctor-strange"><b>Doctor Strange</b></div>
+          <div class="info">
+            <h3>Doctor Strange <small>2016</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Mind-bending visuals and a great origin story.”</p>
+            <span class="user">Salma</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Egyptian Films</h2>
+      <div class="movie-grid">
+
+<a href="movie-details.html#yacoubian" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster yacoubian"><b class="ar">عمارة يعقوبيان</b></div>
+          <div class="info">
+            <h3>The Yacoubian Building <small>2006</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“Sharp, human and unforgettable. A Cairo classic.”</p>
+            <span class="user">Mona</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#embassy" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster embassy"><b class="ar">السفارة في العمارة</b></div>
+          <div class="info">
+            <h3>The Embassy in the Building <small>2005</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Adel Imam at his funniest. Still makes me laugh.”</p>
+            <span class="user">Karim</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#terrorism-kebab" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster terrorism-kebab"><b class="ar">الإرهاب والكباب</b></div>
+          <div class="info">
+            <h3>Terrorism and Kebab <small>1992</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“A comedy with a big heart and a sharp message.”</p>
+            <span class="user">Rania</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#cairo-station" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster cairo-station"><b class="ar">باب الحديد</b></div>
+          <div class="info">
+            <h3>Cairo Station <small>1958</small></h3>
+            <div class="stars">★★★★★</div>
+            <p class="review">“Chahine’s masterpiece. Full of life, fear and longing.”</p>
+            <span class="user">Tamer</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#blue-elephant" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster blue-elephant"><b class="ar">الفيل الأزرق</b></div>
+          <div class="info">
+            <h3>The Blue Elephant <small>2014</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Dark, surreal and very well acted.”</p>
+            <span class="user">Sara</span>
+          </div>
+        </a>
+
+<a href="movie-details.html#saidi" class="card" style="color: inherit; text-decoration: none;">
+          <div class="poster saidi"><b class="ar">صعيدي في الجامعة الأمريكية</b></div>
+          <div class="info">
+            <h3>Saidi at the American University <small>1998</small></h3>
+            <div class="stars">★★★★☆</div>
+            <p class="review">“Pure fun. Henedy and the whole cast are great.”</p>
+            <span class="user">Dina</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+
+<div class="rail" aria-hidden="true"><span class="rail-train">metro web team 🚇</span></div>
+
+    <div class="footer-grid">
+
+      <div>
+        <h4>Metro Cinema</h4>
+        <p>Your next stop for honest movie reviews, from Marvel heroes to Egyptian classics.</p>
+      </div>
+
+      <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="movies.html">Movies</a>
+          <a href="login.html">Login</a>
+          <a href="user-signup.html">Sign up</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>support@metrocinema.example</p>
+        <p>Open 24/7. No tickets needed, popcorn optional.</p>
+      </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2026 Metro Cinema · No spoilers were harmed in the making of this website. </p>
+
+  </footer>
+
+</body>
+</html>

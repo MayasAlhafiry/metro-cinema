@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reject Review – Metro Cinema Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="admin-movies.css">
+
+<link rel="stylesheet" href="admin-reviews.css">
+</head>
+<body>
+
+<a class="logo" href="index.html" aria-label="Metro Cinema home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="21,15 43,15 40,25 24,25" fill="#8f2a3a"/>
+      <circle cx="25" cy="12" r="4" fill="#f6ecd2"/>
+      <circle cx="32" cy="10" r="5" fill="#f6ecd2"/>
+      <circle cx="39" cy="12" r="4" fill="#f6ecd2"/>
+      <rect x="14" y="25" width="36" height="24" rx="7" fill="#d9b86c"/>
+      <rect x="18" y="29" width="28" height="12" rx="5" fill="#150f1a"/>
+      <circle cx="26" cy="35" r="4" fill="#fff"/>
+      <circle cx="38" cy="35" r="4" fill="#fff"/>
+      <circle class="pupil" cx="27" cy="36" r="2" fill="#150f1a"/>
+      <circle class="pupil" cx="39" cy="36" r="2" fill="#150f1a"/>
+      <path d="M25 44Q32 49 39 44" stroke="#150f1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="23" cy="52" r="3.5" fill="#f2dca0"/>
+      <circle cx="41" cy="52" r="3.5" fill="#f2dca0"/>
+    </svg>
+  </a>
+
+<div class="navs">
+
+    <nav aria-label="Admin navigation">
+      <span class="role">Admin</span>
+      <a href="index.html">Home</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="manage-movies.html">Manage Movies</a>
+      <a href="add-movie.html">Add Movie</a>
+      <a href="review-requests.html">Review Requests</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+
+  </div>
+
+  <header>
+    <h1>Reject Review</h1>
+    <p>Tell the user why their review cannot be published.</p>
+  </header>
+
+  <main class="admin-container">
+
+<p class="select-message">
+      Select a review to reject.
+      <a href="review-requests.html">Back to Review Requests</a>
+    </p>
+
+<section class="admin-card admin-form reject-section" id="reject-101">
+
+      <div class="editing-banner">
+        <span>Rejecting review <strong>#101</strong></span>
+        <span class="status status-pending">Pending</span>
+      </div>
+
+      <div class="review-card review-card-plain">
+        <div class="review-top">
+          <div>
+            <h3>Iron Man</h3>
+            <small>Marvel · Review #101</small>
+          </div>
+        </div>
+        <div class="review-meta">
+          <span>By <strong>Sara Ahmed</strong></span>
+          <span class="stars" aria-label="Rating 5 out of 5">★★★★★ (5/5)</span>
+          <span>24 Oct 2026</span>
+        </div>
+        <p class="review-text">“The film that started it all. Downey is perfect and the first suit-up scene still gives me goosebumps.”</p>
+      </div>
+
+      <form action="review-requests.html#rejected-101" method="GET">
+        <input type="hidden" name="review_id" value="101">
+        <input type="hidden" name="decision" value="rejected">
+
+        <div class="form-group">
+          <label for="rejection-message-101">Rejection message <span class="required-star">*</span></label>
+          <textarea id="rejection-message-101" name="rejection_message" rows="5"
+                    minlength="10" maxlength="300" required
+                    placeholder="Explain to the user why this review was rejected..."></textarea>
+          <span class="form-hint">Required. Between 10 and 300 characters. The user will see this message in My Reviews.</span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+          <a href="review-requests.html" class="btn btn-secondary">Cancel and Go Back</a>
+        </div>
+      </form>
+
+    </section>
+
+<section class="admin-card admin-form reject-section" id="reject-102">
+
+      <div class="editing-banner">
+        <span>Rejecting review <strong>#102</strong></span>
+        <span class="status status-pending">Pending</span>
+      </div>
+
+      <div class="review-card review-card-plain">
+        <div class="review-top">
+          <div>
+            <h3>The Yacoubian Building</h3>
+            <small>Egyptian · Review #102</small>
+          </div>
+        </div>
+        <div class="review-meta">
+          <span>By <strong>Omar Khaled</strong></span>
+          <span class="stars" aria-label="Rating 4 out of 5">★★★★☆ (4/5)</span>
+          <span>24 Oct 2026</span>
+        </div>
+        <p class="review-text">“Sharp, human and unforgettable. The cast carries every storyline and the ending hits hard.”</p>
+      </div>
+
+      <form action="review-requests.html#rejected-102" method="GET">
+        <input type="hidden" name="review_id" value="102">
+        <input type="hidden" name="decision" value="rejected">
+
+        <div class="form-group">
+          <label for="rejection-message-102">Rejection message <span class="required-star">*</span></label>
+          <textarea id="rejection-message-102" name="rejection_message" rows="5"
+                    minlength="10" maxlength="300" required
+                    placeholder="Explain to the user why this review was rejected..."></textarea>
+          <span class="form-hint">Required. Between 10 and 300 characters. The user will see this message in My Reviews.</span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+          <a href="review-requests.html" class="btn btn-secondary">Cancel and Go Back</a>
+        </div>
+      </form>
+
+    </section>
+
+<section class="admin-card admin-form reject-section" id="reject-103">
+
+      <div class="editing-banner">
+        <span>Rejecting review <strong>#103</strong></span>
+        <span class="status status-pending">Pending</span>
+      </div>
+
+      <div class="review-card review-card-plain">
+        <div class="review-top">
+          <div>
+            <h3>Avengers: Endgame</h3>
+            <small>Marvel · Review #103</small>
+          </div>
+        </div>
+        <div class="review-meta">
+          <span>By <strong>Mona Hassan</strong></span>
+          <span class="stars" aria-label="Rating 5 out of 5">★★★★★ (5/5)</span>
+          <span>23 Oct 2026</span>
+        </div>
+        <p class="review-text">“An emotional finale worth ten years of waiting. I cried at least twice.”</p>
+      </div>
+
+      <form action="review-requests.html#rejected-103" method="GET">
+        <input type="hidden" name="review_id" value="103">
+        <input type="hidden" name="decision" value="rejected">
+
+        <div class="form-group">
+          <label for="rejection-message-103">Rejection message <span class="required-star">*</span></label>
+          <textarea id="rejection-message-103" name="rejection_message" rows="5"
+                    minlength="10" maxlength="300" required
+                    placeholder="Explain to the user why this review was rejected..."></textarea>
+          <span class="form-hint">Required. Between 10 and 300 characters. The user will see this message in My Reviews.</span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+          <a href="review-requests.html" class="btn btn-secondary">Cancel and Go Back</a>
+        </div>
+      </form>
+
+    </section>
+
+<section class="admin-card admin-form reject-section" id="reject-104">
+
+      <div class="editing-banner">
+        <span>Rejecting review <strong>#104</strong></span>
+        <span class="status status-pending">Pending</span>
+      </div>
+
+      <div class="review-card review-card-plain">
+        <div class="review-top">
+          <div>
+            <h3>Terrorism and Kebab</h3>
+            <small>Egyptian · Review #104</small>
+          </div>
+        </div>
+        <div class="review-meta">
+          <span>By <strong>Youssef Adel</strong></span>
+          <span class="stars" aria-label="Rating 3 out of 5">★★★☆☆ (3/5)</span>
+          <span>22 Oct 2026</span>
+        </div>
+        <p class="review-text">“Funny at first, but I think it drags a little in the middle. Still a classic.”</p>
+      </div>
+
+      <form action="review-requests.html#rejected-104" method="GET">
+        <input type="hidden" name="review_id" value="104">
+        <input type="hidden" name="decision" value="rejected">
+
+        <div class="form-group">
+          <label for="rejection-message-104">Rejection message <span class="required-star">*</span></label>
+          <textarea id="rejection-message-104" name="rejection_message" rows="5"
+                    minlength="10" maxlength="300" required
+                    placeholder="Explain to the user why this review was rejected..."></textarea>
+          <span class="form-hint">Required. Between 10 and 300 characters. The user will see this message in My Reviews.</span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+          <a href="review-requests.html" class="btn btn-secondary">Cancel and Go Back</a>
+        </div>
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+<div class="rail" aria-hidden="true"><span class="rail-train">metro web team 🚇</span></div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Metro Cinema</h4>
+        <p>Your next stop for honest movie reviews, from Marvel heroes to Egyptian classics. </p>
+      </div>
+
+      <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="movies.html">Movies</a>
+          <a href="login.html">Login</a>
+          <a href="user-signup.html">Sign up</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>support@metrocinema.example</p>
+        <p>Open 24/7. No tickets needed, popcorn optional.</p>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2026 Metro Cinema · No spoilers were harmed in the making of this website. </p>
+  </footer>
+
+</body>
+</html>
+

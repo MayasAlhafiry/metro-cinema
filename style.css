@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  background: #150f1a;
+  color: #f3ead7;
+  font-family: "Cairo", sans-serif;
+  text-align: center;
+}
+
+header { padding: 3rem 1rem 1rem; }
+
+h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #d9b86c;
+}
+
+header p { color: #b3a58f; }
+
+main { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  color: #f2dca0;
+  border-bottom: 1px solid #d9b86c;
+  padding-bottom: 0.5rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #221829;
+  border: 1px solid #d9b86c55;
+  border-radius: 1rem;
+  overflow: hidden;
+  animation: show 0.8s ease both;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #d9b86c66;
+}
+
+@keyframes show {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.poster {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  display: grid;
+  align-items: end;
+  padding: 1rem;
+background-image: var(--img, none), linear-gradient(155deg, var(--a), var(--b));
+  background-size: cover;
+  background-position: center;
+}
+
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #150f1aee 0%, transparent 60%);
+}
+
+.poster b {
+  position: relative;
+  z-index: 1; font-family: "Playfair Display", serif; font-size: 1.8rem; }
+.poster b.ar { font-family: "Cairo", sans-serif; font-size: 2.1rem; }
+
+.iron-man { --a: #7a1f1f; --b: #d9a441; --img: url("images/iron-man.jpg"); }
+.black-panther { --a: #1c1530; --b: #7f5ad6; --img: url("images/black-panther.jpg"); }
+.endgame { --a: #2a1450; --b: #c9923a; --img: url("images/endgame.jpg"); }
+.guardians { --a: #5b1b4f; --b: #e0803a; --img: url("images/guardians.jpg"); }
+.spiderman { --a: #6b1020; --b: #2a3d8f; --img: url("images/spiderman.jpg"); }
+.doctor-strange { --a: #4a2210; --b: #c97a2b; --img: url("images/doctor-strange.jpg"); }
+.yacoubian { --a: #4a2a14; --b: #c9a45c; --img: url("images/yacoubian.jpg"); }
+.embassy { --a: #1f3d2e; --b: #d9b86c; --img: url("images/embassy.jpg"); }
+.terrorism-kebab { --a: #5a1f14; --b: #e0803a; --img: url("images/terrorism-kebab.jpg"); }
+.cairo-station { --a: #2b2b33; --b: #9a8a6a; --img: url("images/cairo-station.jpg"); }
+.blue-elephant { --a: #0f2a4a; --b: #5aa9c9; --img: url("images/blue-elephant.jpg"); }
+.saidi { --a: #5a3414; --b: #e0b25a; --img: url("images/saidi.jpg"); }
+
+.info { padding: 1rem; }
+.info h3 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; }
+.info small { display: block; color: #b3a58f; }
+.stars { color: #d9b86c; margin: 0.3rem 0; }
+.review { font-style: italic; }
+.user { color: #f2dca0; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 1.6rem;
+  padding: 0.8rem 1rem;
+  background: #221829;
+  border-bottom: 1px solid #d9b86c55;
+}
+
+.role {
+  background: #d9b86c;
+  color: #150f1a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.8rem;
+  border-radius: 999px;
+}
+
+nav a {
+  position: relative;
+  color: #f3ead7;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #d9b86c;
+  transition: width 0.3s;
+}
+
+nav a:hover { color: #d9b86c; }
+nav a:hover::after { width: 100%; }
+
+.logo {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.8rem;
+  z-index: 10;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: 2px solid #d9b86c;
+  border-radius: 50%;
+  background: #150f1a;
+  animation: ride 3s ease-in-out infinite;
+}
+
+.logo svg { width: 100%; height: 100%; display: block; }
+
+@keyframes ride {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  50%      { transform: translateX(3px) rotate(3deg); }
+}
+
+.logo:hover {
+  animation: shake 0.4s ease-in-out infinite;
+  box-shadow: 0 0 18px #d9b86c88;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
+}
+
+.logo:hover .pupil { transform: translateX(-2px); }
+
+nav { padding-left: 4.8rem; padding-right: 4.8rem; }
+
+footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+  background: #221829;
+  border-top: 1px solid #d9b86c55;
+  color: #b3a58f;
+  text-align: left;
+}
+
+.rail {
+  position: relative;
+  height: 1.8rem;
+  border-bottom: 2px dashed #d9b86c88;
+}
+
+.rail-train {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.3rem;
+  animation: across 14s linear infinite;
+}
+
+@keyframes across {
+  from { left: -3rem; }
+  to   { left: 100%; }
+}
+
+.footer-grid {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2.2rem 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 2rem;
+}
+
+footer h4 {
+  margin: 0 0 0.8rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #d9b86c;
+}
+
+footer p { margin: 0 0 0.4rem; }
+
+footer a {
+  display: block;
+  color: #f3ead7;
+  text-decoration: none;
+  padding: 0.1rem 0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+footer a:hover { color: #d9b86c; transform: translateX(6px); }
+
+.footer-bottom {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #d9b86c33;
+}

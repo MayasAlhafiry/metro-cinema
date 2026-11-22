@@ -1,0 +1,186 @@
+
+.review-section {
+    background-color: #221829;
+    border: 1px solid #d9b86c55;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 35px;
+}
+
+.review-section h2 {
+        color: #d9b86c;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+.review-section p {
+        color: #f3ead7;
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+.review-form label {
+    display: block;
+    color: #d9b86c;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.review-form select,
+.review-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #150f1a;
+    color: #f3ead7;
+    border: 1px solid #d9b86c55;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.review-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background-color: #d9b86c;
+    color: #150f1a;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+        background-color: #f2dca0;
+    }
+
+@media (max-width: 700px) {
+    .review-section {
+        padding: 20px;
+    }
+
+        .review-section h2 {
+            font-size: 22px;
+        }
+}
+
+.my-reviews-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+    .my-reviews-page h1 {
+        color: #d9b86c;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+.reviews-intro {
+    text-align: center;
+    color: #f3ead7;
+    margin-bottom: 40px;
+}
+
+.my-review-card {
+    background: #221829;
+    border: 1px solid #d9b86c55;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+    .my-review-card h2 {
+        color: #d9b86c;
+        margin-bottom: 12px;
+    }
+
+.review-rating {
+    color: #d9b86c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.review-status {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.pending {
+    background: #5c451b;
+    color: #ffd76a;
+}
+
+.approved {
+    background: #194d37;
+    color: #8ff0b5;
+}
+
+.rejected {
+    background: #5c242a;
+    color: #ff9da6;
+}
+
+.review-text {
+    color: #f3ead7;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.review-date {
+    color: #b9abbf;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.rejection-message {
+    background: #39202a;
+    border-left: 4px solid #e06a76;
+    padding: 15px;
+    color: #f3ead7;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.review-movie-link,
+.browse-movies-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d9b86c;
+    color: #150f1a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .review-movie-link:hover,
+    .browse-movies-link:hover {
+        background: #f2dca0;
+    }
+
+.browse-movies-link {
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+    .my-reviews-page h1 {
+        font-size: 28px;
+    }
+
+    .my-review-card {
+        padding: 18px;
+    }
+}

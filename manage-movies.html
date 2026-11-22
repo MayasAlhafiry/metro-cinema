@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Movies – Metro Cinema Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="admin-movies.css">
+</head>
+<body>
+
+<a class="logo" href="index.html" aria-label="Metro Cinema home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="21,15 43,15 40,25 24,25" fill="#8f2a3a"/>
+      <circle cx="25" cy="12" r="4" fill="#f6ecd2"/>
+      <circle cx="32" cy="10" r="5" fill="#f6ecd2"/>
+      <circle cx="39" cy="12" r="4" fill="#f6ecd2"/>
+      <rect x="14" y="25" width="36" height="24" rx="7" fill="#d9b86c"/>
+      <rect x="18" y="29" width="28" height="12" rx="5" fill="#150f1a"/>
+      <circle cx="26" cy="35" r="4" fill="#fff"/>
+      <circle cx="38" cy="35" r="4" fill="#fff"/>
+      <circle class="pupil" cx="27" cy="36" r="2" fill="#150f1a"/>
+      <circle class="pupil" cx="39" cy="36" r="2" fill="#150f1a"/>
+      <path d="M25 44Q32 49 39 44" stroke="#150f1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="23" cy="52" r="3.5" fill="#f2dca0"/>
+      <circle cx="41" cy="52" r="3.5" fill="#f2dca0"/>
+    </svg>
+  </a>
+
+<div class="navs">
+
+    <nav aria-label="Admin navigation">
+      <span class="role">Admin</span>
+      <a href="index.html">Home</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="manage-movies.html">Manage Movies</a>
+      <a href="add-movie.html">Add Movie</a>
+      <a href="review-requests.html">Review Requests</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+
+  </div>
+
+  <header>
+    <h1>Manage Movies</h1>
+    <p>Admin portal to view catalog, update movie details, and remove records.</p>
+  </header>
+
+  <main class="admin-container">
+
+<section class="admin-toolbar" aria-label="Admin controls">
+      <div class="admin-stats">
+        <span>Total Titles: <strong>12</strong></span>
+        <span>Marvel Films: <strong>6</strong></span>
+        <span>Egyptian Classics: <strong>6</strong></span>
+      </div>
+      <div>
+        <a href="add-movie.html" class="btn btn-primary">Add New Movie</a>
+      </div>
+    </section>
+
+<section aria-labelledby="table-heading">
+      <h2 id="table-heading" class="section-title">Current Movie Catalog</h2>
+
+      <div class="table-responsive">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th scope="col" class="col-id">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Year</th>
+              <th scope="col">Director</th>
+              <th scope="col">Description</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-id">1</td>
+              <td class="col-title">Iron Man</td>
+              <td><span class="badge-genre">Action, Sci-Fi</span></td>
+              <td>2008</td>
+              <td>Jon Favreau</td>
+              <td class="col-desc">Tony Stark, a genius inventor, builds a powerful suit of armor and becomes the superhero Iron Man.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#iron-man" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">2</td>
+              <td class="col-title">Black Panther</td>
+              <td><span class="badge-genre">Action, Sci-Fi</span></td>
+              <td>2018</td>
+              <td>Ryan Coogler</td>
+              <td class="col-desc">T'Challa returns to Wakanda to become king, but must protect his country when an enemy challenges his leadership.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#black-panther" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">3</td>
+              <td class="col-title">Avengers: Endgame</td>
+              <td><span class="badge-genre">Action, Adventure</span></td>
+              <td>2019</td>
+              <td>Anthony Russo, Joe Russo</td>
+              <td class="col-desc">After a devastating defeat, the surviving Avengers work together on one final mission to restore what was lost.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#endgame" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">4</td>
+              <td class="col-title">Guardians of the Galaxy</td>
+              <td><span class="badge-genre">Adventure, Sci-Fi</span></td>
+              <td>2014</td>
+              <td>James Gunn</td>
+              <td class="col-desc">A group of unusual space criminals join forces to protect the galaxy from a dangerous enemy.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#guardians" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">5</td>
+              <td class="col-title">Spider-Man: No Way Home</td>
+              <td><span class="badge-genre">Action, Fantasy</span></td>
+              <td>2021</td>
+              <td>Jon Watts</td>
+              <td class="col-desc">Peter Parker asks Doctor Strange for help, but an unraveled spell brings powerful villains from other dimensions.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#spiderman" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">6</td>
+              <td class="col-title">Doctor Strange</td>
+              <td><span class="badge-genre">Fantasy, Action</span></td>
+              <td>2016</td>
+              <td>Scott Derrickson</td>
+              <td class="col-desc">A brilliant neurosurgeon learns the mystic arts to heal and protect the world from alternate dimension threats.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#doctor-strange" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">7</td>
+              <td class="col-title">The Yacoubian Building</td>
+              <td><span class="badge-genre">Drama</span></td>
+              <td>2006</td>
+              <td>Marwan Hamed</td>
+              <td class="col-desc">Depicts the intertwined lives, struggles, and social corruption among residents of a historic downtown Cairo building.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#yacoubian" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">8</td>
+              <td class="col-title">The Embassy in the Building</td>
+              <td><span class="badge-genre">Comedy, Drama</span></td>
+              <td>2005</td>
+              <td>Amr Arafa</td>
+              <td class="col-desc">An engineer returns to Cairo after years abroad and finds the Israeli embassy next door to his apartment.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#embassy" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">9</td>
+              <td class="col-title">Terrorism and Kebab</td>
+              <td><span class="badge-genre">Comedy, Drama</span></td>
+              <td>1992</td>
+              <td>Sherif Arafa</td>
+              <td class="col-desc">A regular citizen goes to the Mogamma government building for routine paperwork and causes an accidental hostage standoff.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#terrorism-kebab" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">10</td>
+              <td class="col-title">Cairo Station</td>
+              <td><span class="badge-genre">Drama, Thriller</span></td>
+              <td>1958</td>
+              <td>Youssef Chahine</td>
+              <td class="col-desc">A crippled newsstand seller develops a dangerous obsession with a lively lemonade vendor at Cairo Central Station.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#cairo-station" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">11</td>
+              <td class="col-title">The Blue Elephant</td>
+              <td><span class="badge-genre">Thriller, Mystery</span></td>
+              <td>2014</td>
+              <td>Marwan Hamed</td>
+              <td class="col-desc">A psychiatrist at an asylum for the criminally insane evaluates an old friend who has committed a bizarre crime.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#blue-elephant" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="col-id">12</td>
+              <td class="col-title">Saidi at the American University</td>
+              <td><span class="badge-genre">Comedy</span></td>
+              <td>1998</td>
+              <td>Saeed Hamed</td>
+              <td class="col-desc">A rural student from Upper Egypt wins a scholarship to the American University in Cairo, leading to comical cultural clashes.</td>
+              <td>
+                <div class="table-actions">
+                  <a href="movie-details.html#saidi" class="btn btn-secondary btn-sm" title="View details">View</a>
+                  <a href="edit-movie.html" class="btn btn-outline btn-sm" title="Edit this movie">Edit</a>
+                  <a href="delete-movie.html" class="btn btn-danger btn-sm" title="Delete this movie">Delete</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+<div class="rail" aria-hidden="true"><span class="rail-train">metro web team 🚇</span></div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Metro Cinema</h4>
+        <p>Your next stop for honest movie reviews, from Marvel heroes to Egyptian classics. </p>
+      </div>
+
+      <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="movies.html">Movies</a>
+          <a href="login.html">Login</a>
+          <a href="user-signup.html">Sign up</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>support@metrocinema.example</p>
+        <p>Open 24/7. No tickets needed, popcorn optional.</p>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2026 Metro Cinema · No spoilers were harmed in the making of this website. </p>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,131 @@
+
+main {
+    max-width: none;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.category {
+    position: relative;
+    margin: 40px 0 70px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category-header h2 {
+    font-size: 26px;
+    text-align: left;
+    margin: 0;
+}
+
+.arrows {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.arrows button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #d9b86c;
+    background: #221829;
+    color: #d9b86c;
+    font-size: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.arrows button:hover {
+    background: #d9b86c;
+    color: #150f1a;
+}
+
+.movie-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 15px 52px 25px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+.movie-row::-webkit-scrollbar {
+    display: none;
+}
+
+.catalog-card {
+    flex: 0 0 250px;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    scroll-snap-align: start;
+}
+
+.catalog-card .poster {
+    aspect-ratio: 3 / 4;
+    box-sizing: border-box;
+}
+
+.catalog-card .info {
+    padding: 15px;
+}
+
+.catalog-card .info h3 {
+    color: #f2dca0;
+    font-size: 18px;
+}
+
+.catalog-card .info p {
+    color: #b3a58f;
+    font-size: 14px;
+}
+
+.search-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #d9b86c;
+    color: #150f1a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-link:hover {
+    background: #f2dca0;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 0 10px;
+    }
+
+    .category-header h2 {
+        font-size: 20px;
+    }
+
+    .catalog-card {
+        flex-basis: 210px;
+    }
+
+    .arrows button {
+        width: 36px;
+        height: 36px;
+    }
+}

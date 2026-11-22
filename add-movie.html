@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Movie – Metro Cinema Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="admin-movies.css">
+</head>
+<body>
+
+<a class="logo" href="index.html" aria-label="Metro Cinema home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <polygon points="21,15 43,15 40,25 24,25" fill="#8f2a3a"/>
+      <circle cx="25" cy="12" r="4" fill="#f6ecd2"/>
+      <circle cx="32" cy="10" r="5" fill="#f6ecd2"/>
+      <circle cx="39" cy="12" r="4" fill="#f6ecd2"/>
+      <rect x="14" y="25" width="36" height="24" rx="7" fill="#d9b86c"/>
+      <rect x="18" y="29" width="28" height="12" rx="5" fill="#150f1a"/>
+      <circle cx="26" cy="35" r="4" fill="#fff"/>
+      <circle cx="38" cy="35" r="4" fill="#fff"/>
+      <circle class="pupil" cx="27" cy="36" r="2" fill="#150f1a"/>
+      <circle class="pupil" cx="39" cy="36" r="2" fill="#150f1a"/>
+      <path d="M25 44Q32 49 39 44" stroke="#150f1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="23" cy="52" r="3.5" fill="#f2dca0"/>
+      <circle cx="41" cy="52" r="3.5" fill="#f2dca0"/>
+    </svg>
+  </a>
+
+<div class="navs">
+
+    <nav aria-label="Admin navigation">
+      <span class="role">Admin</span>
+      <a href="index.html">Home</a>
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="manage-movies.html">Manage Movies</a>
+      <a href="add-movie.html">Add Movie</a>
+      <a href="review-requests.html">Review Requests</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+
+  </div>
+
+  <header>
+    <h1>Add New Movie</h1>
+    <p>Fill out the form below to register a new movie in the Metro Cinema collection.</p>
+  </header>
+
+  <main class="admin-container">
+
+    <div class="admin-card">
+      <form action="manage-movies.html" method="POST" class="admin-form">
+
+<div class="form-row">
+          <div class="form-group">
+            <label for="movie-id">Movie ID <span class="required-star">*</span></label>
+            <input 
+              type="number" 
+              id="movie-id" 
+              name="movie_id" 
+              min="1" 
+              placeholder="e.g., 13" 
+              required>
+            <span class="form-hint">Unique numeric identifier</span>
+          </div>
+
+          <div class="form-group">
+            <label for="movie-title">Movie Title <span class="required-star">*</span></label>
+            <input 
+              type="text" 
+              id="movie-title" 
+              name="title" 
+              maxlength="120" 
+              placeholder="e.g., Captain America: Civil War" 
+              required>
+          </div>
+        </div>
+
+<div class="form-row">
+          <div class="form-group">
+            <label for="movie-genre">Genre <span class="required-star">*</span></label>
+            <select id="movie-genre" name="genre" required>
+              <option value="" disabled selected>-- Select a genre --</option>
+              <option value="Action">Action</option>
+              <option value="Action, Adventure">Action, Adventure</option>
+              <option value="Action, Sci-Fi">Action, Sci-Fi</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Comedy, Drama">Comedy, Drama</option>
+              <option value="Drama">Drama</option>
+              <option value="Drama, Thriller">Drama, Thriller</option>
+              <option value="Fantasy, Action">Fantasy, Action</option>
+              <option value="Thriller, Mystery">Thriller, Mystery</option>
+              <option value="Romance">Romance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="release-year">Release Year <span class="required-star">*</span></label>
+            <input 
+              type="number" 
+              id="release-year" 
+              name="release_year" 
+              min="1888" 
+              max="2099" 
+              placeholder="e.g., 2024" 
+              required>
+            <span class="form-hint">Between 1888 and 2099</span>
+          </div>
+        </div>
+
+<div class="form-group">
+          <label for="director">Director <span class="required-star">*</span></label>
+          <input 
+            type="text" 
+            id="director" 
+            name="director" 
+            maxlength="100" 
+            placeholder="e.g., Christopher Nolan" 
+            required>
+        </div>
+
+<div class="form-group">
+          <label for="description">Description <span class="required-star">*</span></label>
+          <textarea 
+            id="description" 
+            name="description" 
+            rows="5" 
+            maxlength="1000" 
+            placeholder="Write a clear and engaging synopsis of the movie..." 
+            required></textarea>
+          <span class="form-hint">Brief plot summary for users and reviewers</span>
+        </div>
+
+<div class="form-row">
+          <div class="form-group">
+            <label for="duration">Duration (Minutes)</label>
+            <input 
+              type="number" 
+              id="duration" 
+              name="duration" 
+              min="1" 
+              max="600" 
+              placeholder="e.g., 142">
+            <span class="form-hint">Optional runtime in minutes</span>
+          </div>
+
+          <div class="form-group">
+            <label for="poster">Poster Image File</label>
+            <input 
+              type="text" 
+              id="poster" 
+              name="poster" 
+              placeholder="e.g., images/new-movie.jpg">
+            <span class="form-hint">File path or filename in images folder</span>
+          </div>
+        </div>
+
+<div class="form-actions">
+          <button type="submit" class="btn btn-primary">Add Movie</button>
+          <button type="reset" class="btn btn-secondary">Clear Fields</button>
+          <a href="manage-movies.html" class="btn btn-outline">Cancel</a>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+<div class="rail" aria-hidden="true"><span class="rail-train">metro web team 🚇</span></div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Metro Cinema</h4>
+        <p>Your next stop for honest movie reviews, from Marvel heroes to Egyptian classics.</p>
+      </div>
+
+      <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="movies.html">Movies</a>
+          <a href="login.html">Login</a>
+          <a href="user-signup.html">Sign up</a>
+      </div>
+      
+      <div>
+        <h4>Contact</h4>
+        <p>support@metrocinema.example</p>
+        <p>Open 24/7. No tickets needed, popcorn optional.</p>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2026 Metro Cinema · No spoilers were harmed in the making of this website. </p>
+  </footer>
+
+</body>
+</html>
+

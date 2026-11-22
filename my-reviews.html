@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Reviews - Metro Cinema</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user-reviews.css">
+</head>
+
+<body>
+
+  <a class="logo" href="index.html" aria-label="Metro Cinema home">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+    <polygon points="21,15 43,15 40,25 24,25" fill="#8f2a3a"/>
+    <circle cx="25" cy="12" r="4" fill="#f6ecd2"/>
+    <circle cx="32" cy="10" r="5" fill="#f6ecd2"/>
+    <circle cx="39" cy="12" r="4" fill="#f6ecd2"/>
+    <rect x="14" y="25" width="36" height="24" rx="7" fill="#d9b86c"/>
+    <rect x="18" y="29" width="28" height="12" rx="5" fill="#150f1a"/>
+    <circle cx="26" cy="35" r="4" fill="#fff"/>
+    <circle cx="38" cy="35" r="4" fill="#fff"/>
+    <circle class="pupil" cx="27" cy="36" r="2" fill="#150f1a"/>
+    <circle class="pupil" cx="39" cy="36" r="2" fill="#150f1a"/>
+    <path d="M25 44Q32 49 39 44" stroke="#150f1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="23" cy="52" r="3.5" fill="#f2dca0"/>
+    <circle cx="41" cy="52" r="3.5" fill="#f2dca0"/>
+    </svg>
+  </a>
+
+<div class="navs">
+        <nav aria-label="User navigation">
+            <span class="role">User</span>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="search.html">Search</a>
+            <a href="my-reviews.html">My Reviews</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+
+    </div>
+
+    <main class="my-reviews-page">
+
+        <h1>My Reviews</h1>
+        <p class="reviews-intro">
+            Track your movie reviews and their approval status.
+        </p>
+
+<article class="my-review-card">
+
+            <h2>Iron Man</h2>
+
+            <p class="review-rating">★★★★★</p>
+
+            <span class="review-status pending">Pending</span>
+
+            <p class="review-text">
+                Amazing movie! I really enjoyed the story,
+                action scenes, and Tony Stark's character.
+            </p>
+
+            <p class="review-date">Submitted: October 20, 2026</p>
+
+            <a href="movie-details.html#iron-man"
+               class="review-movie-link">View Movie</a>
+
+        </article>
+
+<article class="my-review-card">
+
+            <h2>Black Panther</h2>
+
+            <p class="review-rating">★★★★☆</p>
+
+            <span class="review-status approved">Approved</span>
+
+            <p class="review-text">
+                Great visuals and an interesting story.
+                I especially loved the world of Wakanda.
+            </p>
+
+            <p class="review-date">Submitted: October 18, 2026</p>
+
+            <a href="movie-details.html#black-panther"
+               class="review-movie-link">View Movie</a>
+
+        </article>
+
+<article class="my-review-card">
+
+            <h2>Avengers: Endgame</h2>
+
+            <p class="review-rating">★★★☆☆</p>
+
+            <span class="review-status rejected">Rejected</span>
+
+            <p class="review-text">
+                The movie was entertaining,
+                but I expected a different ending.
+            </p>
+
+            <div class="rejection-message">
+                <strong>Rejection Reason:</strong>
+                Your review contains spoilers.
+                Please avoid revealing important plot details.
+            </div>
+
+            <p class="review-date">Submitted: October 15, 2026</p>
+
+            <a href="movie-details.html#endgame"
+               class="review-movie-link">View Movie</a>
+
+        </article>
+
+        <a href="movies.html" class="browse-movies-link">
+            Browse More Movies
+        </a>
+
+    </main>
+
+</body>
+</html>
