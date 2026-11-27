@@ -53,8 +53,8 @@
             <form method="post" action="index.html" class="signup-form">
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username"
-                    autocomplete="username"
+                    <input type="text" id="username" name="username" title="letters, digits and underscores only"
+                    autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+"
                     required>
                 </div>
 
@@ -66,9 +66,11 @@
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <div class="password-wrap">
-                        <input type="password" id="password" name="password" minlength="6" maxlength="100"
-                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s])\S{6,100}"
-                        title="6 to 100 characters, no spaces, with at least one uppercase letter, one lowercase letter, one number and one special character (for example @ # $ ! %)"
+                        <input type="password" 
+                        id="password" name="password"
+                        minlength="8" maxlength="100"
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}"
+                        title="minimum 8 characters, an uppercase letter, a lowercase letter and a digit"
                         autocomplete="new-password" required>
                         <button type="button" class="eye" aria-label="Show password">👁</button>
                     </div>
@@ -77,8 +79,7 @@
                 <div class="form-group">
                     <label for="confirm-password">Confirm Password:</label>
                     <div class="password-wrap">
-                        <input type="password" id="confirm-password" name="confirm-password" minlength="6" maxlength="100"
-                        autocomplete="new-password" required>
+                        <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required>
                         <button type="button" class="eye" aria-label="Show confirm password">👁</button>
                     </div>
                 </div>

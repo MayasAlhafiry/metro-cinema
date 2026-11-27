@@ -105,3 +105,26 @@ form {
     margin-top: 18px;
     color: #d9b86c;
 }
+
+
+.role-group {
+    border: none;
+    /* border-color:#c19530; */
+    padding: auto;
+    margin: 0;
+}
+
+.role-group input {
+    display: inline-block;
+    width: auto;
+    accent-color: #d9b86c;
+}
+
+.role-group label {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.role-group legend {
+    margin-bottom: 3px;
+}
