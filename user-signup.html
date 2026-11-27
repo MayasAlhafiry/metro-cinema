@@ -52,7 +52,7 @@
             <p>Create your account to start reviewing movies!</p>
         </header>
         <main>
-            <form method="post" action="index.html" class="signup-form">
+            <form method="post" action="index.html" class="signup-form" data-auth="signup" data-role="user">
                                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" title="letters, digits and underscores only"
@@ -103,7 +103,6 @@
 
             <div class="login-link">
                 <p>Already have an account? <a href="login.html">Login here</a>.</p>
-                <p>Are you an admin? <a href="admin-signup.html">Register here</a>.</p>
             </div>
         </main>
 
@@ -135,5 +134,6 @@
 
             <p class="footer-bottom">© 2026 Metro Cinema · No spoilers were harmed in the making of this website. </p>
         </footer>
-    </body>
+<script src="storage.js"></script><script src="app.js"></script>
+</body>
 </html>
