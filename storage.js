@@ -193,9 +193,12 @@
     }
   ];
 
-  // Generate a simple unique ID
-  function newId() {
-    return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 7);
+  // Generate a numeric unique ID
+  function newId(collection) { // collection takes "user" "movie" "admin" so that we know which catogery need to give a new id 
+    var key = PREFIX + collection + "_nextId";
+    var id = Number(localStorage.getItem(key));
+    localStorage.setItem(key, id + 1);
+    return id;
   }
 
   function readList(collection) {
@@ -222,11 +225,11 @@
     }) || null;
   }
 
-  // Add a new item (creates an id if missing)
+  // Add a new item with an automatically generated ID
   function add(collection, item) {
     var list = readList(collection);
     var newItem = Object.assign({}, item, {
-      id: item && item.id ? item.id : newId()
+      id: newId(collection)
     });
     list.push(newItem);
     saveList(collection, list);
@@ -291,15 +294,31 @@
   // Seed default data once
   function initialize() {
     if (!localStorage.getItem(PREFIX + "movies")) {
-      saveList("movies", defaultMovies);
+        saveList("movies", defaultMovies);
     }
     if (!localStorage.getItem(PREFIX + "reviews")) {
-      saveList("reviews", []);
+        saveList("reviews", []);
     }
     if (!localStorage.getItem(PREFIX + "users")) {
-      saveList("users", []);
+        saveList("users", []);
     }
-  }
+
+    ["movies", "users", "reviews"].forEach(function (collection) {
+        var key = PREFIX + collection + "_nextId";
+
+        if (!localStorage.getItem(key)) {
+            var next = 1;
+
+            for (var item of readList(collection)) {
+                if (Number(item.id) >= next) {
+                    next = Number(item.id) + 1;
+                }
+            }
+
+            localStorage.setItem(key, next);
+        }
+    });
+}
 
   initialize();
 
