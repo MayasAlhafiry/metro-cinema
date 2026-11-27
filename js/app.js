@@ -1,8 +1,7 @@
-// Dynamic navbar, role protection, auth, and homepage rendering
+
+// Dynamic navbar, role protection, and homepage rendering
 
 (function () {
-  var SESSION_KEY = "metroCinema:session";
-
   // Links shown in navbar for each role
   var navLinks = {
     guest: [
@@ -42,7 +41,7 @@
 
   function getSession() {
     try {
-      return JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+      return JSON.parse(sessionStorage.getItem("metroCinema:session") || "null");
     } catch (err) {
       return null;
     }
@@ -75,7 +74,6 @@
       );
       return;
   }
-
 
   var requiredRole = protectedPages[currentPage];
 
@@ -111,24 +109,31 @@
     var slug = movie.slug || movie.id;
     var posterClass = movie.cssClass ? " " + escapeHtml(movie.cssClass) : "";
     var styleParts = [];
+
     if (!movie.cssClass) {
       styleParts.push("--a:#221829;--b:#8f2a3a");
     }
+
     if (movie.poster) {
       styleParts.push("--img:url('" + escapeHtml(movie.poster) + "')");
     }
+
     var posterStyle = styleParts.length ? ' style="' + styleParts.join(";") + '"' : "";
+
     var posterLabel = movie.arabicTitle
       ? '<b class="ar">' + escapeHtml(movie.arabicTitle) + "</b>"
       : "<b>" + escapeHtml(movie.title) + "</b>";
 
     var detailsHtml = "";
+
     if (movie.stars) {
       detailsHtml += '<div class="stars">' + escapeHtml(movie.stars) + "</div>";
     }
+
     if (movie.review) {
       detailsHtml += '<p class="review">' + escapeHtml(movie.review) + "</p>";
     }
+
     detailsHtml += '<span class="user">' + escapeHtml(movie.reviewer || movie.genre || "") + "</span>";
 
     return (
@@ -144,11 +149,13 @@
 
   function renderHomeMovies() {
     var home = document.querySelector("[data-home-movies]");
+
     if (!home || !window.MetroStorage) {
       return;
     }
 
     var notice = "";
+
     if (window.location.search.includes("access=denied")) {
       notice = '<p class="role" style="display:inline-block;margin:1rem 0;">Access denied for your account role.</p>';
     }
@@ -183,110 +190,6 @@
         .join("");
   }
 
-  // 4. Simple login, signup, and logout handlers
-  function setupAuthForms() {
-    var storage = window.MetroStorage;
-    if (!storage) {
-      return;
-    }
-
-    // login page
-    var loginForm = document.querySelector('form[data-auth="login"]');
-    if (loginForm) {
-      loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var data = new FormData(loginForm);
-        var username = String(data.get("username") || "").trim().toLowerCase();
-        var password = String(data.get("password") || "");
-
-        var user = storage.get("users").find(function (u) {
-          return u.username.toLowerCase() === username && u.password === password;
-        });
-
-        if (!user) {
-          alert("Invalid username or password");
-          return;
-        }
-
-        sessionStorage.setItem(
-          SESSION_KEY,
-          JSON.stringify({ id: user.id, username: user.username, role: user.role })
-        );
-
-        window.location.href = user.role === "admin" ? "admin-dashboard.html" : "movies.html";
-      });
-    }
-
-    // signup page
-    document.querySelectorAll('form[data-auth="signup"]').forEach(function (form) {
-      // validate password
-      var passwordInput = form.querySelector("#password");
-      var confirmInput = form.querySelector("#confirm-password");
-
-      function validatePassword() {
-        if(passwordInput.value !== confirmInput.value) {
-          confirmInput.setCustomValidity("Passwords do not match")
-        } else {
-          confirmInput.setCustomValidity("")
-        }
-      }
-      passwordInput.addEventListener("input", validatePassword)
-      confirmInput.addEventListener("input", validatePassword)
-
-      // get data from the form 
-      form.addEventListener("submit", function (event) {
-            console.log("Signup clicked");
-        event.preventDefault();
-        var data = new FormData(form);
-        var email = String(data.get("email") || "").trim().toLowerCase();
-        var username = String(data.get("username") || "").trim().toLowerCase();
-        var password = String(data.get("password") || "");
-
-        // unique email
-        var exists = storage.get("users").some(function (u) {
-          return u.email.toLowerCase() === email;
-        });
-        if (exists) {
-          alert("An account with this email already exists");
-          return;
-        }
-
-        // unique username
-        var usernameExists = storage.get("users").some(function (u) {
-          return u.username.toLowerCase() === username
-        })
-        if(usernameExists) {
-          alert("An account with this username already exists");
-          return;
-        }
-
-        // role
-        var signupRole = String(data.get("role") || "");
-
-        // store tha data to create new account
-        storage.add("users", {
-          username: username,
-          email: email,
-          password: password,
-          role: signupRole
-        });
-
-        // redirect to login after sigup 
-        window.location.href = "login.html";
-      });
-    });
-
-    // logout 
-    if (currentPage === "logout.html") {
-      document.querySelectorAll(".logout-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          sessionStorage.removeItem(SESSION_KEY);
-        });
-      });
-    }
-  }
-
   renderNavbars();
   renderHomeMovies();
-  setupAuthForms();
 })();
