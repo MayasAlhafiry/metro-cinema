@@ -262,6 +262,9 @@
     saveList(collection, filtered);
     return true;
   }
+  function find(collection, predicate) {
+    return readList(collection).filter(predicate);
+}
 
   // Search items by keyword string or filter object
   function search(collection, query) {
@@ -327,6 +330,7 @@
     add: add,
     update: update,
     delete: remove,
+    find: find,
     search: search,
     initialize: initialize,
     newId: newId
