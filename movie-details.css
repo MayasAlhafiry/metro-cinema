@@ -5,18 +5,6 @@
     padding: 50px 20px;
 }
 
-.movie-detail {
-    display: none;
-    scroll-margin-top: 240px;
-}
-.movie-detail:target {
-    display: block;
-}
-
-.details-page:has(.movie-detail:target) .select-message {
-    display: none;
-}
-
 .select-message {
     padding: 60px 20px;
     color: #f3ead7;
